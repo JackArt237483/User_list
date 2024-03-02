@@ -1,5 +1,6 @@
 let usersData = []; // Хранение данных о пользователях
 
+// функция получения пользователей
 function fetchUsers() {
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
@@ -14,6 +15,7 @@ function fetchUsers() {
     });
 }
 
+// функция отображение пользователей
 function displayUsers(users) {
   const userList = document.getElementById('user-list');
   userList.innerHTML = '';
@@ -39,12 +41,14 @@ function displayUsers(users) {
   });
 }
 
+// функция сортировки пользователей
 function sortUsers() {
   const sortBy = document.getElementById('sort-select').value;
   const sortedUsers = [...usersData].sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
   displayUsers(sortedUsers);
 }
 
+//функция фильтрации и поиска пользователей
 function filterUsers() {
   const filterValue = document.getElementById('filter-input').value.toLowerCase();
   const filteredUsers = usersData.filter(user =>
