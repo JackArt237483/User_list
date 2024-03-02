@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Базовая верстка -->
+  <div class="container">
+    <h1>User List</h1>
+    <div class="sort_container">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select" onchange="sortUsers()">
+        <option value="name">Name</option>
+        <option value="email">Email</option>
+      </select>
+      <input type="text" id="filter-input" placeholder="Filter by name or email" oninput="filterUsers()">
+      <button class="btn" onclick="fetchUsers()">Refresh</button>
+    </div>
+    <div id="user-list"></div>
+  </div>
+</body>
+  <script src="app.js"></script>
+</html>
